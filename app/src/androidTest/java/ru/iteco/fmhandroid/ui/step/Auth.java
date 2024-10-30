@@ -14,6 +14,8 @@ import static org.hamcrest.Matchers.endsWith;
 import static org.hamcrest.Matchers.is;
 import static ru.iteco.fmhandroid.ui.data.DataHelper.childAtPosition;
 import static io.qameta.allure.kotlin.Allure.step;
+import static ru.iteco.fmhandroid.ui.data.DataHelper.loginValue;
+import static ru.iteco.fmhandroid.ui.data.DataHelper.pwdValue;
 
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.action.ViewActions;
@@ -23,24 +25,25 @@ import ru.iteco.fmhandroid.R;
 
 public class Auth {
 
-    public static final String LOGIN = "login2";
-    public static final String PWD = "password2";
 
     @Step
-    //Аннотация не работает((
     public static void login(String login, String pwd) {
+        step("Аутентификация пользователя", stepContext -> {
         enterLogin(login);
         enterPassword(pwd);
         clickSingIn();
+        return null;
+    });
     }
 
-
     @Step
-    //Аннотация не работает(( Возможно, нужно
     public static void login() {
-        enterLogin(LOGIN);
-        enterPassword(PWD);
+        step("Аутентификация пользователя с зарегистрированными данными", stepContext -> {
+        enterLogin(loginValue);
+        enterPassword(pwdValue);
         clickSingIn();
+            return null;
+        });
     }
 
     /**
@@ -48,8 +51,8 @@ public class Auth {
      * Необходим для независимости тестов и возвращению к экрану логина
      */
     @Step
-    //Аннотация не работает((
     public static void logout() {
+        step("Выход из приложения", stepContext -> {
         ViewInteraction appCompatImageButton = onView(
                 allOf(withId(R.id.authorization_image_button), withContentDescription("Authorization"),
                         childAtPosition(
@@ -70,6 +73,8 @@ public class Auth {
                         isDisplayed()));
         materialTextView.perform(click());
         //Main.checkTrademarkDisplayed(not(isDisplayed()));
+        return null;
+    });
     }
 
     public static void clickSingIn() {

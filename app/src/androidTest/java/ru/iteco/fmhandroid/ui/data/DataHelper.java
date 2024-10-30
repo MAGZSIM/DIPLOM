@@ -22,6 +22,13 @@ public class DataHelper {
     public static String loginValue = "login2";
     public static String pwdValue = "password2";
 
+    public static String wrongLogin = "123";
+    public static String wrongPasssword = "123";
+
+    public static String secondTitleTextCard = "«Хоспис для меня - это то, каким должен быть мир.\"";
+    public static String secondDescriptionTextCard = "Нет шаблона и стандарта, есть только дух, который живет в разных домах по-разному. Но всегда он добрый, любящий и помогающий.";
+    public static String eighthTitleTextCard = "Важен каждый!";
+    public static String eighthDescriptionTextCard = "\"Каждый, кто оказывается в стенах хосписа, имеет огромное значение в жизни хосписа и его подопечных\"";
 
     public static String generateDate(int days) {
         return LocalDate.now().plusDays(days).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));

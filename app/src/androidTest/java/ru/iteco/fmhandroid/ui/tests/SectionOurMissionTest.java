@@ -1,4 +1,9 @@
-package ru.iteco.fmhandroid.ui;
+package ru.iteco.fmhandroid.ui.tests;
+
+import static ru.iteco.fmhandroid.ui.data.DataHelper.eighthDescriptionTextCard;
+import static ru.iteco.fmhandroid.ui.data.DataHelper.eighthTitleTextCard;
+import static ru.iteco.fmhandroid.ui.data.DataHelper.secondDescriptionTextCard;
+import static ru.iteco.fmhandroid.ui.data.DataHelper.secondTitleTextCard;
 
 import androidx.test.espresso.IdlingRegistry;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
@@ -13,6 +18,7 @@ import org.junit.runner.RunWith;
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.idle.IdleService;
+import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.step.Auth;
 import ru.iteco.fmhandroid.ui.step.Main;
 import ru.iteco.fmhandroid.ui.step.SectionsApp;
@@ -67,8 +73,8 @@ public class SectionOurMissionTest {
     public void sectionOurMissionSecondCardSelection() {
         Main.goToSectionOurMission();
         SectionsApp.quoteCardSelection(1);
-        SectionsApp.displayTitleTextCard("«Хоспис для меня - это то, каким должен быть мир.\"");
-        SectionsApp.displayDescriptionTextCard("Нет шаблона и стандарта, есть только дух, который живет в разных домах по-разному. Но всегда он добрый, любящий и помогающий.");
+        SectionsApp.displayTitleTextCard(secondTitleTextCard);
+        SectionsApp.displayDescriptionTextCard(secondDescriptionTextCard);
         SectionsApp.quoteCardSelection(1);
     }
 
@@ -76,8 +82,8 @@ public class SectionOurMissionTest {
     public void sectionOurMissionEighthCardSelection() {
         Main.goToSectionOurMission();
         SectionsApp.quoteCardSelection(7);
-        SectionsApp.displayTitleTextCard("Важен каждый!");
-        SectionsApp.displayDescriptionTextCard("\"Каждый, кто оказывается в стенах хосписа, имеет огромное значение в жизни хосписа и его подопечных\"");
+        SectionsApp.displayTitleTextCard(eighthTitleTextCard);
+        SectionsApp.displayDescriptionTextCard(eighthDescriptionTextCard);
         SectionsApp.quoteCardSelection(7);
     }
 }

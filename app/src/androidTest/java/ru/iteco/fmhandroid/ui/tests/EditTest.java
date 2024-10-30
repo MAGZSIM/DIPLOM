@@ -1,4 +1,4 @@
-package ru.iteco.fmhandroid.ui;
+package ru.iteco.fmhandroid.ui.tests;
 
 
 import static ru.iteco.fmhandroid.ui.data.DataHelper.category;
@@ -29,6 +29,7 @@ import org.junit.runner.RunWith;
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.idle.IdleService;
+import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.step.AddNews;
 import ru.iteco.fmhandroid.ui.step.AllNews;
 import ru.iteco.fmhandroid.ui.step.Auth;

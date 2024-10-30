@@ -1,10 +1,12 @@
-package ru.iteco.fmhandroid.ui;
+package ru.iteco.fmhandroid.ui.tests;
 
 
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static org.hamcrest.Matchers.not;
 import static ru.iteco.fmhandroid.ui.data.DataHelper.loginValue;
 import static ru.iteco.fmhandroid.ui.data.DataHelper.pwdValue;
+import static ru.iteco.fmhandroid.ui.data.DataHelper.wrongLogin;
+import static ru.iteco.fmhandroid.ui.data.DataHelper.wrongPasssword;
 import static ru.iteco.fmhandroid.ui.step.Auth.login;
 import static ru.iteco.fmhandroid.ui.step.Auth.logout;
 
@@ -21,6 +23,7 @@ import org.junit.runner.RunWith;
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.idle.IdleService;
+import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.step.Auth;
 import ru.iteco.fmhandroid.ui.step.Main;
 
@@ -66,13 +69,13 @@ public class AuthTest {
 
     @Test
     public void authTestWrongLogin() {
-        login("123", pwdValue);
+        login(wrongLogin, pwdValue);
         Main.checkTrademarkDisplayed(not(isDisplayed()));
     }
 
     @Test
     public void authTestWrongPassword() {
-        login(loginValue, "123");
+        login(loginValue, wrongPasssword);
         Main.checkTrademarkDisplayed(not(isDisplayed()));
     }
 

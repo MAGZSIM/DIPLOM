@@ -1,4 +1,4 @@
-package ru.iteco.fmhandroid.ui;
+package ru.iteco.fmhandroid.ui.tests;
 
 import androidx.test.espresso.IdlingRegistry;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.Story;
 import ru.iteco.fmhandroid.idle.IdleService;
+import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.step.Auth;
 import ru.iteco.fmhandroid.ui.step.FilterNews;
 import ru.iteco.fmhandroid.ui.step.Main;
